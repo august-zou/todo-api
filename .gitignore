@@ -6,6 +6,9 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.~
+*.swp
+*.swo
 
 pids
 logs
@@ -16,3 +19,6 @@ node_modules
 
 .bundle.js
 coverage
+
+public/dist/**/*
+.DS_Store
