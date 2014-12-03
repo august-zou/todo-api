@@ -16,9 +16,10 @@ var config = require('./config');
 var path = require('path');
 var http = require('http');
 var koa = require('koa');
-
+var cors = require('koa-cors');
 var app = koa();
 
+var origin = process.env.ORIGIN || 'http://127.0.0.1:3000'
 /**
  * response time header
  */
@@ -30,6 +31,7 @@ if (config.debug && process.env.NODE_ENV !== 'test') {
   app.use(middlewares.logger());
 }
 
+app.use(cors({origin: origin}));
 /**
  * router
  */
